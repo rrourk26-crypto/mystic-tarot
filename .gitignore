@@ -1,0 +1,5 @@
+node_modules/
+dist/
+*.log
+web2exe.json
+email - mystictarot@protonmail.com.txt

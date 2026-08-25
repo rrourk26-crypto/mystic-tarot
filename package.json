@@ -1,0 +1,52 @@
+{
+  "name": "mystic-tarot",
+  "version": "1.0.0",
+  "description": "Mystic Tarot desktop app",
+  "main": "main.js",
+  "author": "Mystic Tarot",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win",
+    "dist:dir": "electron-builder --win --dir",
+    "dist:installer": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.mystictarot.app",
+    "productName": "Mystic Tarot",
+    "artifactName": "Mystic-Tarot-Setup-1.0.0.exe",
+    "files": [
+      "**/*",
+      "!*.psd",
+      "!web2exe.json",
+      "!README.md",
+      "!email - mystictarot@protonmail.com.txt"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Mystic Tarot"
+    }
+  }
+}
+
+
