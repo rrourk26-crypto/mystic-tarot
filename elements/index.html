@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Elements - Mystic Tarot</title>
+  <link rel="stylesheet" href="elements.css">
+</head>
+<body>
+
+<div class="elements-container">
+  <div class="elements-page">
+    
+    <!-- Header -->
+    <div class="elements-header">
+      <button class="back-button">← Back to Menu</button>
+      <h1 class="elements-title">✨ The Elements ✨</h1>
+      <p class="elements-subtitle">Explore the four classical elements and the unifying Spirit</p>
+      
+      <div class="nav-buttons">
+        <button class="nav-btn active" data-section="explore">🔍 Explore</button>
+        <button class="nav-btn" data-section="reading">✨ Reveal My Element</button>
+        <button class="nav-btn" data-section="oracle">🔮 Ask the Elements</button>
+        <button class="nav-btn" data-section="compatibility">🤝 Compatibility</button>
+      </div>
+    </div>
+
+    <!-- Explore Elements Section -->
+    <div id="explore-section" class="content-section active">
+      <div id="elementCardsContainer" class="element-grid"></div>
+    </div>
+
+    <!-- Elemental Reading Section -->
+    <div id="reading-section" class="content-section">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <p style="font-size: 1.1em; color: #c9b9d2; line-height: 1.8;">
+          The elements flow through all of us in different proportions. 
+          Discover which element dominates your nature and how your elemental balance shapes who you are.
+        </p>
+        <button id="revealBtn" class="action-button">✨ Reveal My Element</button>
+      </div>
+      <div id="readingResult"></div>
+    </div>
+
+    <!-- Oracle Section -->
+    <div id="oracle-section" class="content-section">
+      <div style="background: rgba(26, 38, 54, 0.85); border: 2px solid rgba(255, 215, 0, 0.3); border-radius: 15px; padding: 40px; margin-bottom: 30px;">
+        <h2 style="color: var(--air-color); font-family: 'Creepster', cursive; margin-top: 0;">Ask the Elements</h2>
+        <p style="color: #c9b9d2; line-height: 1.8; margin-bottom: 25px;">
+          Pose a question to the elemental forces. An element will speak to you with wisdom and guidance.
+        </p>
+        
+        <div class="form-group">
+          <label class="form-label">Your Question (Optional)</label>
+          <input 
+            id="oracleQuestion" 
+            type="text" 
+            class="form-input" 
+            placeholder="E.g., 'Should I take this opportunity?' or 'What do I need to know?'"
+          >
+        </div>
+
+        <button id="askBtn" class="action-button">🔮 Ask the Elements</button>
+      </div>
+      <div id="oracleResult"></div>
+    </div>
+
+    <!-- Compatibility Section -->
+    <div id="compatibility-section" class="content-section">
+      <div style="background: rgba(26, 38, 54, 0.85); border: 2px solid rgba(255, 215, 0, 0.3); border-radius: 15px; padding: 40px; margin-bottom: 30px;">
+        <h2 style="color: var(--air-color); font-family: 'Creepster', cursive; margin-top: 0;">Elemental Compatibility</h2>
+        <p style="color: #c9b9d2; line-height: 1.8; margin-bottom: 25px;">
+          Explore how different elements interact with one another. Some combinations are naturally harmonious, 
+          while others create dynamic tension that leads to growth and transformation.
+        </p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px;">
+          <div class="form-group">
+            <label class="form-label">First Element</label>
+            <select id="element1Select" class="form-input">
+              <option value="">Select an element...</option>
+              <option value="fire">🔥 Fire</option>
+              <option value="water">💧 Water</option>
+              <option value="air">🌬️ Air</option>
+              <option value="earth">🌍 Earth</option>
+              <option value="spirit">✨ Spirit</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Second Element</label>
+            <select id="element2Select" class="form-input">
+              <option value="">Select an element...</option>
+              <option value="fire">🔥 Fire</option>
+              <option value="water">💧 Water</option>
+              <option value="air">🌬️ Air</option>
+              <option value="earth">🌍 Earth</option>
+              <option value="spirit">✨ Spirit</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="compatibilityBtn" class="action-button">🤝 Check Compatibility</button>
+      </div>
+      <div id="compatibilityResult"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Element Detail Modal -->
+<div id="elementDetailModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 1000; align-items: center; justify-content: center; padding: 20px;">
+  <div style="background: rgba(26, 38, 54, 0.95); border: 2px solid rgba(255, 215, 0, 0.3); border-radius: 15px; padding: 40px; max-width: 900px; max-height: 90vh; overflow-y: auto; width: 100%;">
+    <div id="elementDetailContent"></div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="elemental-data.js"></script>
+<script src="elemental-core.js"></script>
+<script src="elements.js"></script>
+
+</body>
+</html>
